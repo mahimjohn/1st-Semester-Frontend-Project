@@ -1,0 +1,142 @@
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+               Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  color:#1f2937;
+  background:
+    radial-gradient(1400px 700px at 15% 10%, #2A2F57, transparent 60%),
+    linear-gradient(135deg, #2A2F57, #A55D68 45%, #FC511D);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 32px;
+}
+
+.exam-card{
+  height: 85vh;
+  width:min(1180px, 100%);
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 20px 40px rgba(0,0,0,.12), 0 2px 6px rgba(0,0,0,.06);
+  overflow:hidden;
+
+}
+.ques{
+    margin-top: 70px;
+    margin-left: 50px;
+    font-size: 32px;
+}
+
+.option{
+    height: 50px;
+    margin-top: 70px;
+    margin-left: 100px;
+}
+
+.opt{
+  width: 1000px;
+  height: 50px;
+  background: #e5e5e5;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  padding: 10px;
+  border: none;
+  transition: 0.2s ease;
+}
+
+.opt.correct {
+  background: #4CAF50;
+  color: white;
+}
+
+.opt.wrong {
+  background: #EF4444;
+  color: white;
+}
+
+.opt:hover {
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.next, .Submit, .reset {
+  margin-top: 10px;
+}
+
+.Submit{
+    width: 20px;
+    margin-top: -px;
+    margin-left: 510px;
+}
+.reset{
+    margin-bottom: px;
+    margin-left: 600px;
+    margin-top: -38px;
+}
+.next{
+    width:10px;
+    margin-top:30px;
+    margin-left:100px;
+}
+.ques {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 80px;    
+  margin-left: 50px;
+  font-size: 32px;
+  width: 48px;                
+}
+
+.question-text {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 90px;           
+  margin-left: 16px;           
+  width: calc(100% - 170px);    
+  font-size: 20px;
+  line-height: 1.35;
+  color: #111827;
+}
+
+/* === Exam timer (upper-right inside .exam-card) === */
+.exam-card { position: relative; } /* add if not already present — harmless if present */
+
+/* timer box */
+#exam-timer {
+  position: absolute;
+  top: 18px;                /* distance from top of white box */
+  right: 22px;              /* distance from right edge of white box */
+  background: #111827;      /* dark background */
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  box-shadow: 0 6px 14px rgba(17,24,39,0.12);
+  z-index: 10;              /* above other contents */
+  min-width: 92px;
+  justify-content: center;
+}
+
+/* smaller label style (optional) */
+#timer-label {
+  font-size: 12px;
+  opacity: 0.85;
+  display: none; /* hide label if you only want the time visible; set to block to show */
+}
+
+/* timer numeric value (mm:ss) */
+#timer-value {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
